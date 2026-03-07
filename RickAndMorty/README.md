@@ -58,6 +58,28 @@ This means:
 
 ## What Was Tested and Why
 
+**`URLSessionHTTPClient` (4 tests — `RickAndMortyTests` target, runs on macOS)**
+
+| Test | Why |
+|---|---|
+| `get_requestsCorrectURL` | The URL passed to `get` reaches the session unchanged |
+| `get_requestsWithGETMethod` | Method is GET, not POST or other |
+| `get_deliversErrorOnRequestError` | Transport failure propagates as `.failure` |
+| `get_deliversDataAndResponseOn200Response` | Data + `HTTPURLResponse` forwarded on success |
+
+Tests use `URLProtocolStub` — a `URLProtocol` subclass registered into an ephemeral `URLSession` configuration. This intercepts requests at the Foundation level without subclassing `URLSession` or touching the network.
+
+**`RickAndMortyAPIEndToEndTests` (4 tests — separate target, hits real API)**
+
+| Test | Why |
+|---|---|
+| `load_page1_deliversNonEmptyResults` | API is reachable and returns data |
+| `load_page1_deliversExpectedFirstCharacter` | JSON mapping is correct end-to-end |
+| `load_withNameFilter_deliversOnlyMatchingResults` | Name query param is sent and respected |
+| `load_withStatusFilter_deliversOnlyAliveCharacters` | Status query param is sent and respected |
+
+These are kept in a separate target and run manually — never in the fast unit test suite.
+
 **`RemoteCharacterLoader` (9 tests — `RickAndMortyTests` target, runs on macOS)**
 
 | Test | Why |
@@ -78,7 +100,7 @@ Tests use a `Spy` pattern — captured closures are completed manually in the te
 
 ## What I Would Improve or Add Next
 
-- `URLSessionHTTPClient` — concrete `HTTPClient` backed by `URLSession`
-- End-to-end test target hitting the real Rick and Morty API
 - `RemoteCharacterDetailLoader` — same pattern for `GET /character/{id}`
 - SwiftUI views wired to ViewModels via injected loaders
+- Pagination support in the ViewModel (infinite scroll)
+- Search debounce implementation
