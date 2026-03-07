@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/asanchez/Developer/Challenges/KISS/ChallengeRickMorty/RickAndMorty/build/Release/RickAndMortyDomain.framework/Versions/A/RickAndMortyDomain'
-relocations:     []
-...

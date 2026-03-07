@@ -3,6 +3,7 @@
 *.xcworkspace/xcuserdata/
 *.xcworkspace/contents.xcworkspacedata
 DerivedData/
+build/
 *.moved-aside
 *.pbxuser
 !default.pbxuser
