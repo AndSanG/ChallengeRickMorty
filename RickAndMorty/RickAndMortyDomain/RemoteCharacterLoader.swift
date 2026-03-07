@@ -1,6 +1,10 @@
 import Foundation
 
 final class RemoteCharacterLoader: CharacterLoader {
+    enum Error: Swift.Error, Equatable {
+        case connectivity
+        case invalidData
+    }
     private let baseURL: URL
     private let client: HTTPClient
 
@@ -9,9 +13,17 @@ final class RemoteCharacterLoader: CharacterLoader {
         self.client = client
     }
 
-    func load(query: CharacterQuery, completion: @escaping (Result<CharactersPage, Error>) -> Void) {
+    func load(query: CharacterQuery, completion: @escaping (Result<CharactersPage, Swift.Error>) -> Void) {
         let url = url(for: query)
-        client.get(from: url) { _ in }
+        client.get(from: url) { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case let .success((data, response)):
+                completion(Result { try CharacterItemsMapper.map(data, from: response) })
+            case .failure:
+                completion(.failure(Error.connectivity))
+            }
+        }
     }
 
     private func url(for query: CharacterQuery) -> URL {
