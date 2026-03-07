@@ -1,0 +1,88 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.4 effective-5.10 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-macos26.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name RickAndMortyDomain
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct Character {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let status: RickAndMortyDomain.CharacterStatus
+  public let species: Swift.String
+  public let gender: RickAndMortyDomain.CharacterGender
+  public let imageURL: Foundation.URL
+  public let originName: Swift.String
+  public let locationName: Swift.String
+  public let episodeURLs: [Foundation.URL]
+  public init(id: Swift.Int, name: Swift.String, status: RickAndMortyDomain.CharacterStatus, species: Swift.String, gender: RickAndMortyDomain.CharacterGender, imageURL: Foundation.URL, originName: Swift.String, locationName: Swift.String, episodeURLs: [Foundation.URL])
+}
+public enum CharacterStatus : Swift.String {
+  case alive
+  case dead
+  case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CharacterGender : Swift.String {
+  case female
+  case male
+  case genderless
+  case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol CharacterDetailLoader {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func loadDetail(id: Swift.Int, completion: @escaping (Swift.Result<RickAndMortyDomain.Character, any Swift.Error>) -> Swift.Void)
+  #endif
+}
+public protocol CharacterLoader {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func load(query: RickAndMortyDomain.CharacterQuery, completion: @escaping (Swift.Result<RickAndMortyDomain.CharactersPage, any Swift.Error>) -> Swift.Void)
+  #endif
+}
+public struct CharacterQuery {
+  public let page: Swift.Int
+  public let name: Swift.String?
+  public let status: RickAndMortyDomain.CharacterStatus?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(page: Swift.Int, name: Swift.String? = nil, status: RickAndMortyDomain.CharacterStatus? = nil)
+  #endif
+}
+public struct CharactersPage {
+  public let results: [RickAndMortyDomain.Character]
+  public let info: RickAndMortyDomain.PageInfo
+  public init(results: [RickAndMortyDomain.Character], info: RickAndMortyDomain.PageInfo)
+}
+public struct PageInfo {
+  public let count: Swift.Int
+  public let pages: Swift.Int
+  public let nextPage: Swift.Int?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(count: Swift.Int, pages: Swift.Int, nextPage: Swift.Int?)
+  #endif
+}
+public protocol HTTPClient {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func get(from url: Foundation.URL, completion: @escaping (Swift.Result<(Foundation.Data, Foundation.HTTPURLResponse), any Swift.Error>) -> Swift.Void)
+  #endif
+}
+extension RickAndMortyDomain.CharacterStatus : Swift.Equatable {}
+extension RickAndMortyDomain.CharacterStatus : Swift.Hashable {}
+extension RickAndMortyDomain.CharacterStatus : Swift.RawRepresentable {}
+extension RickAndMortyDomain.CharacterGender : Swift.Equatable {}
+extension RickAndMortyDomain.CharacterGender : Swift.Hashable {}
+extension RickAndMortyDomain.CharacterGender : Swift.RawRepresentable {}

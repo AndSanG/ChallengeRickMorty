@@ -1,0 +1,2028 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "RickAndMortyDomain",
+    "printedName": "RickAndMortyDomain",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "RickAndMortyDomain"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Character",
+        "printedName": "Character",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV2idSivp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV2idSivp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV2idSivg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV2idSivg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV4nameSSvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV4nameSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV4nameSSvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV4nameSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "status",
+            "printedName": "status",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterStatus",
+                "printedName": "RickAndMortyDomain.CharacterStatus",
+                "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV6statusAA0E6StatusOvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV6statusAA0E6StatusOvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV6statusAA0E6StatusOvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV6statusAA0E6StatusOvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "species",
+            "printedName": "species",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV7speciesSSvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV7speciesSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV7speciesSSvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV7speciesSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "gender",
+            "printedName": "gender",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterGender",
+                "printedName": "RickAndMortyDomain.CharacterGender",
+                "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV6genderAA0E6GenderOvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV6genderAA0E6GenderOvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV6genderAA0E6GenderOvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV6genderAA0E6GenderOvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "imageURL",
+            "printedName": "imageURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV8imageURL10Foundation0G0Vvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV8imageURL10Foundation0G0Vvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV8imageURL10Foundation0G0Vvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV8imageURL10Foundation0G0Vvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "originName",
+            "printedName": "originName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV10originNameSSvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV10originNameSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV10originNameSSvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV10originNameSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "locationName",
+            "printedName": "locationName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV12locationNameSSvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV12locationNameSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV12locationNameSSvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV12locationNameSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "episodeURLs",
+            "printedName": "episodeURLs",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.URL]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain9CharacterV11episodeURLsSay10Foundation3URLVGvp",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV11episodeURLsSay10Foundation3URLVGvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.URL]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URL",
+                        "printedName": "Foundation.URL",
+                        "usr": "s:10Foundation3URLV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain9CharacterV11episodeURLsSay10Foundation3URLVGvg",
+                "mangledName": "$s18RickAndMortyDomain9CharacterV11episodeURLsSay10Foundation3URLVGvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(id:name:status:species:gender:imageURL:originName:locationName:episodeURLs:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Character",
+                "printedName": "RickAndMortyDomain.Character",
+                "usr": "s:18RickAndMortyDomain9CharacterV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterStatus",
+                "printedName": "RickAndMortyDomain.CharacterStatus",
+                "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterGender",
+                "printedName": "RickAndMortyDomain.CharacterGender",
+                "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.URL]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain9CharacterV2id4name6status7species6gender8imageURL10originName08locationN011episodeURLsACSi_SSAA0E6StatusOSSAA0E6GenderO10Foundation0L0VS2SSayASGtcfc",
+            "mangledName": "$s18RickAndMortyDomain9CharacterV2id4name6status7species6gender8imageURL10originName08locationN011episodeURLsACSi_SSAA0E6StatusOSSAA0E6GenderO10Foundation0L0VS2SSayASGtcfc",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18RickAndMortyDomain9CharacterV",
+        "mangledName": "$s18RickAndMortyDomain9CharacterV",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharacterStatus",
+        "printedName": "CharacterStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "alive",
+            "printedName": "alive",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterStatus.Type) -> RickAndMortyDomain.CharacterStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterStatus",
+                        "printedName": "RickAndMortyDomain.CharacterStatus",
+                        "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterStatusO5aliveyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterStatusO5aliveyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Var",
+            "name": "dead",
+            "printedName": "dead",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterStatus.Type) -> RickAndMortyDomain.CharacterStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterStatus",
+                        "printedName": "RickAndMortyDomain.CharacterStatus",
+                        "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterStatusO4deadyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterStatusO4deadyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterStatus.Type) -> RickAndMortyDomain.CharacterStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterStatus",
+                        "printedName": "RickAndMortyDomain.CharacterStatus",
+                        "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterStatusO7unknownyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterStatusO7unknownyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "RickAndMortyDomain.CharacterStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain15CharacterStatusO8rawValueACSgSS_tcfc",
+            "mangledName": "$s18RickAndMortyDomain15CharacterStatusO8rawValueACSgSS_tcfc",
+            "moduleName": "RickAndMortyDomain",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain15CharacterStatusO8rawValueSSvp",
+            "mangledName": "$s18RickAndMortyDomain15CharacterStatusO8rawValueSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain15CharacterStatusO8rawValueSSvg",
+                "mangledName": "$s18RickAndMortyDomain15CharacterStatusO8rawValueSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18RickAndMortyDomain15CharacterStatusO",
+        "mangledName": "$s18RickAndMortyDomain15CharacterStatusO",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharacterGender",
+        "printedName": "CharacterGender",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "female",
+            "printedName": "female",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterGender.Type) -> RickAndMortyDomain.CharacterGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterGender",
+                        "printedName": "RickAndMortyDomain.CharacterGender",
+                        "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO6femaleyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO6femaleyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Var",
+            "name": "male",
+            "printedName": "male",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterGender.Type) -> RickAndMortyDomain.CharacterGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterGender",
+                        "printedName": "RickAndMortyDomain.CharacterGender",
+                        "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO4maleyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO4maleyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Var",
+            "name": "genderless",
+            "printedName": "genderless",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterGender.Type) -> RickAndMortyDomain.CharacterGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterGender",
+                        "printedName": "RickAndMortyDomain.CharacterGender",
+                        "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO10genderlessyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO10genderlessyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(RickAndMortyDomain.CharacterGender.Type) -> RickAndMortyDomain.CharacterGender",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "RickAndMortyDomain.CharacterGender.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterGender",
+                        "printedName": "RickAndMortyDomain.CharacterGender",
+                        "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO7unknownyA2CmF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO7unknownyA2CmF",
+            "moduleName": "RickAndMortyDomain"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "RickAndMortyDomain.CharacterGender?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterGender",
+                    "printedName": "RickAndMortyDomain.CharacterGender",
+                    "usr": "s:18RickAndMortyDomain15CharacterGenderO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO8rawValueACSgSS_tcfc",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO8rawValueACSgSS_tcfc",
+            "moduleName": "RickAndMortyDomain",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain15CharacterGenderO8rawValueSSvp",
+            "mangledName": "$s18RickAndMortyDomain15CharacterGenderO8rawValueSSvp",
+            "moduleName": "RickAndMortyDomain",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain15CharacterGenderO8rawValueSSvg",
+                "mangledName": "$s18RickAndMortyDomain15CharacterGenderO8rawValueSSvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18RickAndMortyDomain15CharacterGenderO",
+        "mangledName": "$s18RickAndMortyDomain15CharacterGenderO",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharacterDetailLoader",
+        "printedName": "CharacterDetailLoader",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "loadDetail",
+            "printedName": "loadDetail(id:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<RickAndMortyDomain.Character, any Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<RickAndMortyDomain.Character, any Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Character",
+                        "printedName": "RickAndMortyDomain.Character",
+                        "usr": "s:18RickAndMortyDomain9CharacterV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18RickAndMortyDomain21CharacterDetailLoaderP04loadF02id10completionySi_ys6ResultOyAA0E0Vs5Error_pGctF",
+            "mangledName": "$s18RickAndMortyDomain21CharacterDetailLoaderP04loadF02id10completionySi_ys6ResultOyAA0E0Vs5Error_pGctF",
+            "moduleName": "RickAndMortyDomain",
+            "genericSig": "<τ_0_0 where τ_0_0 : RickAndMortyDomain.CharacterDetailLoader>",
+            "sugared_genericSig": "<Self where Self : RickAndMortyDomain.CharacterDetailLoader>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18RickAndMortyDomain21CharacterDetailLoaderP",
+        "mangledName": "$s18RickAndMortyDomain21CharacterDetailLoaderP",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharacterLoader",
+        "printedName": "CharacterLoader",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "load",
+            "printedName": "load(query:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterQuery",
+                "printedName": "RickAndMortyDomain.CharacterQuery",
+                "usr": "s:18RickAndMortyDomain14CharacterQueryV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<RickAndMortyDomain.CharactersPage, any Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<RickAndMortyDomain.CharactersPage, any Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharactersPage",
+                        "printedName": "RickAndMortyDomain.CharactersPage",
+                        "usr": "s:18RickAndMortyDomain14CharactersPageV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18RickAndMortyDomain15CharacterLoaderP4load5query10completionyAA0E5QueryV_ys6ResultOyAA14CharactersPageVs5Error_pGctF",
+            "mangledName": "$s18RickAndMortyDomain15CharacterLoaderP4load5query10completionyAA0E5QueryV_ys6ResultOyAA14CharactersPageVs5Error_pGctF",
+            "moduleName": "RickAndMortyDomain",
+            "genericSig": "<τ_0_0 where τ_0_0 : RickAndMortyDomain.CharacterLoader>",
+            "sugared_genericSig": "<Self where Self : RickAndMortyDomain.CharacterLoader>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18RickAndMortyDomain15CharacterLoaderP",
+        "mangledName": "$s18RickAndMortyDomain15CharacterLoaderP",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharacterQuery",
+        "printedName": "CharacterQuery",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "page",
+            "printedName": "page",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain14CharacterQueryV4pageSivp",
+            "mangledName": "$s18RickAndMortyDomain14CharacterQueryV4pageSivp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain14CharacterQueryV4pageSivg",
+                "mangledName": "$s18RickAndMortyDomain14CharacterQueryV4pageSivg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain14CharacterQueryV4nameSSSgvp",
+            "mangledName": "$s18RickAndMortyDomain14CharacterQueryV4nameSSSgvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain14CharacterQueryV4nameSSSgvg",
+                "mangledName": "$s18RickAndMortyDomain14CharacterQueryV4nameSSSgvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "status",
+            "printedName": "status",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "RickAndMortyDomain.CharacterStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain14CharacterQueryV6statusAA0E6StatusOSgvp",
+            "mangledName": "$s18RickAndMortyDomain14CharacterQueryV6statusAA0E6StatusOSgvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "RickAndMortyDomain.CharacterStatus?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CharacterStatus",
+                        "printedName": "RickAndMortyDomain.CharacterStatus",
+                        "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain14CharacterQueryV6statusAA0E6StatusOSgvg",
+                "mangledName": "$s18RickAndMortyDomain14CharacterQueryV6statusAA0E6StatusOSgvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(page:name:status:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CharacterQuery",
+                "printedName": "RickAndMortyDomain.CharacterQuery",
+                "usr": "s:18RickAndMortyDomain14CharacterQueryV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "RickAndMortyDomain.CharacterStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CharacterStatus",
+                    "printedName": "RickAndMortyDomain.CharacterStatus",
+                    "usr": "s:18RickAndMortyDomain15CharacterStatusO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain14CharacterQueryV4page4name6statusACSi_SSSgAA0E6StatusOSgtcfc",
+            "mangledName": "$s18RickAndMortyDomain14CharacterQueryV4page4name6statusACSi_SSSgAA0E6StatusOSgtcfc",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18RickAndMortyDomain14CharacterQueryV",
+        "mangledName": "$s18RickAndMortyDomain14CharacterQueryV",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CharactersPage",
+        "printedName": "CharactersPage",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "results",
+            "printedName": "results",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[RickAndMortyDomain.Character]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "RickAndMortyDomain.Character",
+                    "usr": "s:18RickAndMortyDomain9CharacterV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain14CharactersPageV7resultsSayAA9CharacterVGvp",
+            "mangledName": "$s18RickAndMortyDomain14CharactersPageV7resultsSayAA9CharacterVGvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[RickAndMortyDomain.Character]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Character",
+                        "printedName": "RickAndMortyDomain.Character",
+                        "usr": "s:18RickAndMortyDomain9CharacterV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain14CharactersPageV7resultsSayAA9CharacterVGvg",
+                "mangledName": "$s18RickAndMortyDomain14CharactersPageV7resultsSayAA9CharacterVGvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "info",
+            "printedName": "info",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PageInfo",
+                "printedName": "RickAndMortyDomain.PageInfo",
+                "usr": "s:18RickAndMortyDomain8PageInfoV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain14CharactersPageV4infoAA0F4InfoVvp",
+            "mangledName": "$s18RickAndMortyDomain14CharactersPageV4infoAA0F4InfoVvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PageInfo",
+                    "printedName": "RickAndMortyDomain.PageInfo",
+                    "usr": "s:18RickAndMortyDomain8PageInfoV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain14CharactersPageV4infoAA0F4InfoVvg",
+                "mangledName": "$s18RickAndMortyDomain14CharactersPageV4infoAA0F4InfoVvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(results:info:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CharactersPage",
+                "printedName": "RickAndMortyDomain.CharactersPage",
+                "usr": "s:18RickAndMortyDomain14CharactersPageV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[RickAndMortyDomain.Character]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "RickAndMortyDomain.Character",
+                    "usr": "s:18RickAndMortyDomain9CharacterV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PageInfo",
+                "printedName": "RickAndMortyDomain.PageInfo",
+                "usr": "s:18RickAndMortyDomain8PageInfoV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain14CharactersPageV7results4infoACSayAA9CharacterVG_AA0F4InfoVtcfc",
+            "mangledName": "$s18RickAndMortyDomain14CharactersPageV7results4infoACSayAA9CharacterVG_AA0F4InfoVtcfc",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18RickAndMortyDomain14CharactersPageV",
+        "mangledName": "$s18RickAndMortyDomain14CharactersPageV",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PageInfo",
+        "printedName": "PageInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "count",
+            "printedName": "count",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain8PageInfoV5countSivp",
+            "mangledName": "$s18RickAndMortyDomain8PageInfoV5countSivp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain8PageInfoV5countSivg",
+                "mangledName": "$s18RickAndMortyDomain8PageInfoV5countSivg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "pages",
+            "printedName": "pages",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain8PageInfoV5pagesSivp",
+            "mangledName": "$s18RickAndMortyDomain8PageInfoV5pagesSivp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain8PageInfoV5pagesSivg",
+                "mangledName": "$s18RickAndMortyDomain8PageInfoV5pagesSivg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nextPage",
+            "printedName": "nextPage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18RickAndMortyDomain8PageInfoV04nextE0SiSgvp",
+            "mangledName": "$s18RickAndMortyDomain8PageInfoV04nextE0SiSgvp",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18RickAndMortyDomain8PageInfoV04nextE0SiSgvg",
+                "mangledName": "$s18RickAndMortyDomain8PageInfoV04nextE0SiSgvg",
+                "moduleName": "RickAndMortyDomain",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(count:pages:nextPage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PageInfo",
+                "printedName": "RickAndMortyDomain.PageInfo",
+                "usr": "s:18RickAndMortyDomain8PageInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18RickAndMortyDomain8PageInfoV5count5pages04nextE0ACSi_S2iSgtcfc",
+            "mangledName": "$s18RickAndMortyDomain8PageInfoV5count5pages04nextE0ACSi_S2iSgtcfc",
+            "moduleName": "RickAndMortyDomain",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18RickAndMortyDomain8PageInfoV",
+        "mangledName": "$s18RickAndMortyDomain8PageInfoV",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "RickAndMortyDomain"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HTTPClient",
+        "printedName": "HTTPClient",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "get",
+            "printedName": "get(from:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(Foundation.Data, Foundation.HTTPURLResponse), any Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(Foundation.Data, Foundation.HTTPURLResponse), any Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Foundation.Data, Foundation.HTTPURLResponse)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "HTTPURLResponse",
+                            "printedName": "Foundation.HTTPURLResponse",
+                            "usr": "c:objc(cs)NSHTTPURLResponse"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18RickAndMortyDomain10HTTPClientP3get4from10completiony10Foundation3URLV_ys6ResultOyAG4DataV_So17NSHTTPURLResponseCts5Error_pGctF",
+            "mangledName": "$s18RickAndMortyDomain10HTTPClientP3get4from10completiony10Foundation3URLV_ys6ResultOyAG4DataV_So17NSHTTPURLResponseCts5Error_pGctF",
+            "moduleName": "RickAndMortyDomain",
+            "genericSig": "<τ_0_0 where τ_0_0 : RickAndMortyDomain.HTTPClient>",
+            "sugared_genericSig": "<Self where Self : RickAndMortyDomain.HTTPClient>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18RickAndMortyDomain10HTTPClientP",
+        "mangledName": "$s18RickAndMortyDomain10HTTPClientP",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "RickAndMortyDomain",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
