@@ -12,6 +12,18 @@ import Foundation
         #expect(client.requestedURLs.isEmpty)
     }
 
+    // MARK: - Test 2
+
+    @Test func load_requestsDataFromURL() {
+        let url = URL(string: "https://rickandmortyapi.com/api")!
+        let (sut, client) = makeSUT(url: url)
+
+        sut.load(query: CharacterQuery(page: 1)) { _ in }
+
+        #expect(client.requestedURLs.count == 1)
+        #expect(client.requestedURLs.first?.absoluteString.contains("character") == true)
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(
