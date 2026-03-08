@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Character {
+public struct Character: Equatable {
     public let id: Int
     public let name: String
     public let status: CharacterStatus
