@@ -286,3 +286,4 @@ Both ViewModels use `@Observable` (from `import Observation`, not SwiftUI) and d
 - Image caching (`NSCache`-backed) to avoid re-fetching on scroll
 - Accessibility labels on status badges and character images
 - UI snapshot tests for `CharacterListView` and `CharacterDetailView`
+- Comprehensive SwiftUI Previews for all Views, showcasing loaded, empty, loading, and error states
