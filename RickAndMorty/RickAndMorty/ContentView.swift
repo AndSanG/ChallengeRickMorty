@@ -1,24 +1,2 @@
-//
-//  ContentView.swift
-//  RickAndMorty
-//
-//  Created by Andres Sanchez on 6/3/26.
-//
-
+// Superseded by CharacterListView — kept to satisfy file system synchronization.
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
-
-#Preview {
-    ContentView()
-}
