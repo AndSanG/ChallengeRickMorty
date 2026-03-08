@@ -6,13 +6,11 @@ struct CharacterRowView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            AsyncImage(url: character.imageURL) { phase in
+            CachedAsyncImage(url: character.imageURL) { phase in
                 switch phase {
                 case .success(let image):
                     image.resizable().scaledToFill()
                 case .failure, .empty:
-                    Color(.systemGray5)
-                @unknown default:
                     Color(.systemGray5)
                 }
             }
