@@ -32,6 +32,51 @@ import Foundation
 
         #expect(sut.isLoading == true)
     }
+
+    // MARK: - Test 4
+
+    @Test func load_clearsIsLoadingOnSuccess() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .success(anyCharacter()))
+
+        #expect(sut.isLoading == false)
+    }
+
+    // MARK: - Test 5
+
+    @Test func load_clearsIsLoadingOnFailure() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .failure(anyError()))
+
+        #expect(sut.isLoading == false)
+    }
+}
+
+// MARK: - Helpers
+
+private extension CharacterDetailViewModelTests {
+
+    func anyCharacter() -> Character {
+        Character(
+            id: 1,
+            name: "Rick Sanchez",
+            status: .alive,
+            species: "Human",
+            gender: .male,
+            imageURL: URL(string: "https://example.com/1.png")!,
+            originName: "Earth",
+            locationName: "Earth",
+            episodeURLs: []
+        )
+    }
+
+    func anyError() -> NSError {
+        NSError(domain: "test", code: 0)
+    }
 }
 
 // MARK: - Helpers

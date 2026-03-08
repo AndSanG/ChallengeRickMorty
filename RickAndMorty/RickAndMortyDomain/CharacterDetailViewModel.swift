@@ -14,6 +14,9 @@ public final class CharacterDetailViewModel {
 
     public func load() {
         isLoading = true
-        loader.loadDetail(id: characterID) { _ in }
+        loader.loadDetail(id: characterID) { [weak self] result in
+            guard let self else { return }
+            isLoading = false
+        }
     }
 }
