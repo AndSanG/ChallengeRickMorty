@@ -33,7 +33,7 @@ xcodebuild build \
 
 ### Prototype app (`RickAndMortyPrototype`)
 
-Select the **`RickAndMortyPrototype`** scheme in Xcode, choose a simulator, and press **Run**. No network connection needed — all data is hardcoded.
+Select the **`RickAndMortyPrototype`** scheme in Xcode, choose a simulator, and press **Run**. No network connection needed — all data is hardcoded. This is useful for testing the UI/UX without network connection, feedback, or clarity on the requirements.
 
 ```
 xcodebuild build \
@@ -66,7 +66,22 @@ xcodebuild test \
 
 ## Architecture
 
-**Pattern:** MVVM with a Clean Architecture layer separation.
+**Pattern:** MVVM with a Clean Architecture layer separation, VIPER-inspired.
+
+**Why VIPER-inspired?**
+VIPER (View · Interactor · Presenter · Entity · Router) enforces a strict one-responsibility-per-layer rule. This project adopts the same discipline without the full VIPER ceremony:
+
+| VIPER role | This project's equivalent |
+|---|---|
+| **View** | `CharacterListView`, `CharacterDetailView`, `CharacterRowView` — render state, emit user actions |
+| **Interactor** | `RemoteCharacterLoader`, `RemoteCharacterDetailLoader` — pure business logic, protocol-driven, no UI knowledge |
+| **Presenter** | `CharacterListViewModel`, `CharacterDetailViewModel` — translate raw domain data into display state |
+| **Entity** | `Character`, `CharactersPage`, `CharacterQuery` — plain Swift structs, zero framework dependencies |
+| **Router** | `NavigationStack` + the `makeDetailViewModel` factory closure in `RickAndMortyApp` — navigation decisions live in the composition root, not in views |
+
+Each role is enforced by **compiler-level target boundaries**, not just naming conventions. The domain framework has no `import SwiftUI`; the app target has no direct reference to `URLSession` or any remote loader. A layer can only call inward — never outward.
+
+This promotes high modularity, testability, and a strict separation of concerns, making the architecture scale cleanly to large, complex apps: adding a new feature means adding a new Interactor + ViewModel pair without touching unrelated code, and every component is independently unit-testable via protocol substitution.
 
 The codebase is split into three explicit boundaries:
 
