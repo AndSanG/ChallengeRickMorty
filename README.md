@@ -239,7 +239,7 @@ Both ViewModels use `@Observable` (from `import Observation`, not SwiftUI) and d
 - [x] Search by name — `searchable` modifier bound to `viewModel.searchText`; API handles case-insensitivity server-side
 - [x] Filter by status (All / Alive / Dead / Unknown) — toolbar `Menu` bound to `viewModel.statusFilter`
 - [x] Search or filter change resets to page 1 — `load()` always sets `currentPage = 1`
-- [ ] Search debounce (250–400 ms) — **not implemented**; listed under *What I Would Improve or Add Next*
+- [x] Search debounce (250–400 ms)
 
 ### Functional — Character Detail
 - [x] Tap navigates to detail screen
@@ -281,7 +281,6 @@ Both ViewModels use `@Observable` (from `import Observation`, not SwiftUI) and d
 ## What I Would Improve or Add Next
 
 - Organize Domain code in folders.
-- Search debounce (300 ms `Task.sleep` + cancellation on new keystroke) in `CharacterListViewModel`
 - Local cache layer (`CharacterStore` protocol + `CoreData` implementation) for offline support
 - Accessibility labels on status badges and character images
 - UI snapshot tests for `CharacterListView` and `CharacterDetailView`

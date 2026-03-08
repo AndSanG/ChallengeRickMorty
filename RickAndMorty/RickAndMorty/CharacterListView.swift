@@ -13,7 +13,7 @@ struct CharacterListView: View {
                     CharacterDetailView(viewModel: makeDetailViewModel(id))
                 }
                 .searchable(text: Bindable(viewModel).searchText, prompt: "Search characters")
-                .onChange(of: viewModel.searchText) { _, _ in viewModel.load() }
+                .onChange(of: viewModel.searchText) { _, _ in viewModel.debounceSearch() }
                 .toolbar { filterToolbar }
                 .refreshable { viewModel.load() }
                 .onAppear {

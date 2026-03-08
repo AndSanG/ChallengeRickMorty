@@ -12,9 +12,19 @@ public final class CharacterListViewModel {
     public var statusFilter: CharacterStatus? = nil
     @ObservationIgnored private var currentPage = 1
     @ObservationIgnored private let loader: CharacterLoader
+    @ObservationIgnored private var searchTask: Task<Void, Never>?
 
     public init(loader: CharacterLoader) {
         self.loader = loader
+    }
+
+    public func debounceSearch() {
+        searchTask?.cancel()
+        searchTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(300))
+            guard !Task.isCancelled else { return }
+            self?.load()
+        }
     }
 
     public func load() {
