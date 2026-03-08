@@ -8,4 +8,8 @@ public final class CharacterListViewModel {
     public init(loader: CharacterLoader) {
         self.loader = loader
     }
+
+    public func load() {
+        loader.load(query: CharacterQuery(page: 1, name: nil, status: nil)) { _ in }
+    }
 }

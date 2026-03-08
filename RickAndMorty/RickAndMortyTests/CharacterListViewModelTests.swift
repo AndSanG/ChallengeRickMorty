@@ -11,6 +11,16 @@ import Foundation
 
         #expect(loader.loadCallCount == 0)
     }
+
+    // MARK: - Test 2
+
+    @Test func load_requestsCharactersFromLoader() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+
+        #expect(loader.loadCallCount == 1)
+    }
 }
 
 // MARK: - Helpers
