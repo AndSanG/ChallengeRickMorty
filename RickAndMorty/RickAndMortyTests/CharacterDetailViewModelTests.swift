@@ -11,6 +11,17 @@ import Foundation
 
         #expect(loader.loadCallCount == 0)
     }
+
+    // MARK: - Test 2
+
+    @Test func load_requestsDetailFromLoader() {
+        let characterID = 42
+        let (sut, loader) = makeSUT(characterID: characterID)
+
+        sut.load()
+
+        #expect(loader.capturedIDs == [characterID])
+    }
 }
 
 // MARK: - Helpers

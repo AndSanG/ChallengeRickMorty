@@ -10,4 +10,8 @@ public final class CharacterDetailViewModel {
         self.characterID = characterID
         self.loader = loader
     }
+
+    public func load() {
+        loader.loadDetail(id: characterID) { _ in }
+    }
 }
