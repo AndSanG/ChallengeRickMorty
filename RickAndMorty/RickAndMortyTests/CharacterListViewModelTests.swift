@@ -89,6 +89,22 @@ import Foundation
 
         #expect(sut.errorMessage == nil)
     }
+
+    // MARK: - Test 9
+
+    @Test func loadNextPage_appendsCharactersOnSuccess() {
+        let (sut, loader) = makeSUT()
+        let firstPage = [makeCharacter(id: 1)]
+        let secondPage = [makeCharacter(id: 2)]
+
+        sut.load()
+        loader.complete(with: .success(anyPage(results: firstPage, nextPage: 2)))
+
+        sut.loadNextPage()
+        loader.complete(with: .success(anyPage(results: secondPage)), at: 1)
+
+        #expect(sut.characters == firstPage + secondPage)
+    }
 }
 
 // MARK: - Helpers
