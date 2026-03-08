@@ -5,6 +5,7 @@ import Observation
 public final class CharacterDetailViewModel {
     public private(set) var character: Character? = nil
     public private(set) var isLoading = false
+    public private(set) var errorMessage: String? = nil
     @ObservationIgnored private let characterID: Int
     @ObservationIgnored private let loader: CharacterDetailLoader
 
@@ -18,8 +19,11 @@ public final class CharacterDetailViewModel {
         loader.loadDetail(id: characterID) { [weak self] result in
             guard let self else { return }
             isLoading = false
-            if case .success(let loaded) = result {
+            switch result {
+            case .success(let loaded):
                 character = loaded
+            case .failure:
+                errorMessage = "Failed to load character."
             }
         }
     }
