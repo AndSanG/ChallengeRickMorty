@@ -1,19 +1,19 @@
 import Foundation
 
-final class RemoteCharacterLoader: CharacterLoader {
-    enum Error: Swift.Error, Equatable {
+public final class RemoteCharacterLoader: CharacterLoader {
+    public enum Error: Swift.Error, Equatable {
         case connectivity
         case invalidData
     }
     private let baseURL: URL
     private let client: HTTPClient
 
-    init(baseURL: URL, client: HTTPClient) {
+    public init(baseURL: URL, client: HTTPClient) {
         self.baseURL = baseURL
         self.client = client
     }
 
-    func load(query: CharacterQuery, completion: @escaping (Result<CharactersPage, Swift.Error>) -> Void) {
+    public func load(query: CharacterQuery, completion: @escaping (Result<CharactersPage, Swift.Error>) -> Void) {
         let url = url(for: query)
         client.get(from: url) { [weak self] result in
             guard self != nil else { return }
