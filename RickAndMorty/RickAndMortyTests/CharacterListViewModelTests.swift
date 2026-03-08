@@ -105,6 +105,19 @@ import Foundation
 
         #expect(sut.characters == firstPage + secondPage)
     }
+
+    // MARK: - Test 10
+
+    @Test func loadNextPage_doesNothingWhenOnLastPage() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .success(anyPage(results: [], nextPage: nil)))
+
+        sut.loadNextPage()
+
+        #expect(loader.loadCallCount == 1)
+    }
 }
 
 // MARK: - Helpers
