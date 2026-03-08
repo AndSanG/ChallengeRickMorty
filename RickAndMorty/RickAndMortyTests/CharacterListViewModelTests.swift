@@ -53,6 +53,18 @@ import Foundation
 
         #expect(sut.isLoading == false)
     }
+
+    // MARK: - Test 6
+
+    @Test func load_deliversCharactersOnSuccess() {
+        let (sut, loader) = makeSUT()
+        let characters = [makeCharacter(id: 1), makeCharacter(id: 2)]
+
+        sut.load()
+        loader.complete(with: .success(anyPage(results: characters)))
+
+        #expect(sut.characters == characters)
+    }
 }
 
 // MARK: - Helpers
@@ -61,6 +73,20 @@ private extension CharacterListViewModelTests {
 
     func anyPage(results: [Character] = [], nextPage: Int? = nil) -> CharactersPage {
         CharactersPage(results: results, info: PageInfo(count: results.count, pages: 1, nextPage: nextPage))
+    }
+
+    func makeCharacter(id: Int) -> Character {
+        Character(
+            id: id,
+            name: "Any Name",
+            status: .alive,
+            species: "Human",
+            gender: .male,
+            imageURL: URL(string: "https://example.com/\(id).png")!,
+            originName: "Earth",
+            locationName: "Earth",
+            episodeURLs: []
+        )
     }
 
     func anyError() -> NSError {

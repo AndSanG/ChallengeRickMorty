@@ -3,6 +3,7 @@ import Observation
 
 @Observable
 public final class CharacterListViewModel {
+    public private(set) var characters: [Character] = []
     public private(set) var isLoading = false
     @ObservationIgnored private let loader: CharacterLoader
 
@@ -15,7 +16,8 @@ public final class CharacterListViewModel {
         loader.load(query: CharacterQuery(page: 1, name: nil, status: nil)) { [weak self] result in
             guard let self else { return }
             switch result {
-            case .success:
+            case .success(let page):
+                characters = page.results
                 isLoading = false
             case .failure:
                 isLoading = false
