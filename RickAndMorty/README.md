@@ -29,14 +29,28 @@ The codebase is split into three explicit boundaries:
 
 | Layer | Target | Allowed imports |
 |---|---|---|
-| Domain | `RickAndMortyDomain` (macOS framework) | `Foundation` only |
+| Domain | `RickAndMortyDomain` (cross-platform framework) | `Foundation` only |
 | Infrastructure | Inside `RickAndMortyDomain` | `Foundation` only |
-| Presentation | iOS app target (added in a later phase) | `SwiftUI` + domain protocols |
+| Presentation (ViewModels) | Inside `RickAndMortyDomain` | `Foundation` + `Observation` |
+| Presentation (Views) | `RickAndMorty` iOS app target | `SwiftUI` + `RickAndMortyDomain` |
+| Composition Root | `RickAndMortyApp.init()` | Everything — this is the only place that imports concrete types |
 
 **Why this split?**
-The domain layer (`Character`, `CharactersPage`, `CharacterLoader`, `HTTPClient`) has zero platform dependencies. By targeting macOS, all domain and networking tests run natively on the Mac in under a second — no simulator boot, no device selection. The iOS app links the same framework; there is no duplication.
+The domain layer (`Character`, `CharactersPage`, `CharacterLoader`, `HTTPClient`) has zero platform dependencies. It builds for both macOS (so test suites run natively without a simulator) and iOS (so the app links the same binary). No duplication.
 
-Infrastructure types (`RemoteCharacterLoader`, `CharacterItemsMapper`) live in the same macOS framework but depend only on protocols defined there. The only concrete detail they know about is `URLComponents` and `JSONDecoder` — both from `Foundation`.
+Infrastructure types (`RemoteCharacterLoader`, `RemoteCharacterDetailLoader`, `CharacterItemsMapper`) live in the same framework but depend only on protocols defined there. The only concrete detail they know about is `URLComponents` and `JSONDecoder` — both from `Foundation`.
+
+The Composition Root (`RickAndMortyApp.init()`) is the single place that creates concrete objects and wires the dependency graph:
+
+```swift
+let client = URLSessionHTTPClient(session: .init(configuration: .default))
+let listLoader   = RemoteCharacterLoader(baseURL: apiURL, client: client)
+let detailLoader = RemoteCharacterDetailLoader(baseURL: apiURL, client: client)
+let listVM = CharacterListViewModel(loader: listLoader)
+// CharacterDetailViewModel is created per-navigation at the call site
+```
+
+`CharacterListView` and `CharacterDetailView` depend only on their ViewModels — they have no knowledge of `URLSession`, `RemoteCharacterLoader`, or any infrastructure type.
 
 ---
 
@@ -98,9 +112,41 @@ Tests use a `Spy` pattern — captured closures are completed manually in the te
 
 ---
 
+**`CharacterListViewModel` (10 tests — `RickAndMortyTests` target, runs on macOS)**
+
+| Test | Why |
+|---|---|
+| `init_doesNotLoadCharacters` | No accidental side-effects on creation |
+| `load_requestsCharactersFromLoader` | Calling `load()` triggers exactly one loader call |
+| `load_setsIsLoadingDuringRequest` | `isLoading` is `true` while request is in flight |
+| `load_clearsIsLoadingOnSuccessfulLoad` | `isLoading` is `false` after success |
+| `load_clearsIsLoadingOnFailedLoad` | `isLoading` is `false` after failure |
+| `load_deliversCharactersOnSuccess` | `characters` reflects the page results |
+| `load_setsErrorMessageOnFailure` | `errorMessage` is non-nil on failure |
+| `load_clearsErrorBeforeReloading` | Stale error is cleared when `load()` is called again |
+| `loadNextPage_appendsCharactersOnSuccess` | Second page is appended to the existing list |
+| `loadNextPage_doesNothingWhenOnLastPage` | No loader call when `hasNextPage` is false |
+
+**`CharacterDetailViewModel` (7 tests — `RickAndMortyTests` target, runs on macOS)**
+
+| Test | Why |
+|---|---|
+| `init_doesNotLoadDetail` | No accidental side-effects on creation |
+| `load_requestsDetailFromLoader` | `load()` calls loader with the correct character ID |
+| `load_setsIsLoadingDuringRequest` | `isLoading` is `true` while request is in flight |
+| `load_clearsIsLoadingOnSuccess` | `isLoading` is `false` after success |
+| `load_clearsIsLoadingOnFailure` | `isLoading` is `false` after failure |
+| `load_deliversCharacterOnSuccess` | `character` is set from the loader result |
+| `load_setsErrorMessageOnFailure` | `errorMessage` is non-nil on failure |
+
+Both ViewModels use `@Observable` (from `import Observation`, not SwiftUI) and depend only on domain protocols, keeping them simulator-free and framework-agnostic.
+
+---
+
 ## What I Would Improve or Add Next
 
-- `RemoteCharacterDetailLoader` — same pattern for `GET /character/{id}`
-- SwiftUI views wired to ViewModels via injected loaders
-- Pagination support in the ViewModel (infinite scroll)
-- Search debounce implementation
+- Search debounce (300 ms `Task.sleep` + cancellation on new keystroke) in `CharacterListViewModel`
+- Local cache layer (`CharacterStore` protocol + `CoreData` implementation) for offline support
+- Image caching (`NSCache`-backed) to avoid re-fetching on scroll
+- Accessibility labels on status badges and character images
+- UI snapshot tests for `CharacterListView` and `CharacterDetailView`
