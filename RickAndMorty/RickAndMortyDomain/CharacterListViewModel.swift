@@ -7,6 +7,8 @@ public final class CharacterListViewModel {
     public private(set) var isLoading = false
     public private(set) var errorMessage: String? = nil
     public private(set) var hasNextPage = false
+    public var searchText: String = ""
+    public var statusFilter: CharacterStatus? = nil
     @ObservationIgnored private var currentPage = 1
     @ObservationIgnored private let loader: CharacterLoader
 
@@ -18,7 +20,7 @@ public final class CharacterListViewModel {
         currentPage = 1
         isLoading = true
         errorMessage = nil
-        loader.load(query: CharacterQuery(page: 1, name: nil, status: nil)) { [weak self] result in
+        loader.load(query: makeQuery(page: 1)) { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let page):
@@ -32,11 +34,19 @@ public final class CharacterListViewModel {
         }
     }
 
+    private func makeQuery(page: Int) -> CharacterQuery {
+        CharacterQuery(
+            page: page,
+            name: searchText.isEmpty ? nil : searchText,
+            status: statusFilter
+        )
+    }
+
     public func loadNextPage() {
         guard hasNextPage, !isLoading else { return }
         let nextPage = currentPage + 1
         isLoading = true
-        loader.load(query: CharacterQuery(page: nextPage, name: nil, status: nil)) { [weak self] result in
+        loader.load(query: makeQuery(page: nextPage)) { [weak self] result in
             guard let self else { return }
             isLoading = false
             switch result {
