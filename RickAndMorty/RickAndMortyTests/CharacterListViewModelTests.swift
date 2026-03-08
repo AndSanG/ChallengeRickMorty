@@ -65,6 +65,17 @@ import Foundation
 
         #expect(sut.characters == characters)
     }
+
+    // MARK: - Test 7
+
+    @Test func load_setsErrorMessageOnFailure() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .failure(anyError()))
+
+        #expect(sut.errorMessage != nil)
+    }
 }
 
 // MARK: - Helpers

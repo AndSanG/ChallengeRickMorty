@@ -5,6 +5,7 @@ import Observation
 public final class CharacterListViewModel {
     public private(set) var characters: [Character] = []
     public private(set) var isLoading = false
+    public private(set) var errorMessage: String? = nil
     @ObservationIgnored private let loader: CharacterLoader
 
     public init(loader: CharacterLoader) {
@@ -21,6 +22,7 @@ public final class CharacterListViewModel {
                 isLoading = false
             case .failure:
                 isLoading = false
+                errorMessage = "Failed to load characters."
             }
         }
     }
