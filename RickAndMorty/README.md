@@ -4,11 +4,46 @@ A production-style SwiftUI feature that lists Rick and Morty characters, support
 
 ---
 
+## Targets
+
+| Target | Purpose |
+|---|---|
+| `RickAndMorty` | Production iOS app. SwiftUI views + composition root. |
+| `RickAndMortyPrototype` | Throwaway design sandbox — hardcoded data, no networking. Used to validate UI/UX before wiring production code. |
+| `RickAndMortyDomain` | Cross-platform framework. Domain models, protocols, use cases, ViewModels. Builds for both macOS and iOS. |
+| `RickAndMortyTests` | Fast unit tests for the domain framework. Run on macOS — no simulator required. |
+| `RickAndMortyAPIEndToEndTests` | Integration tests that hit the real Rick and Morty API. Run manually, never in CI. |
+
+---
+
 ## How to Run
 
-**Requirements:** Xcode 16+, macOS 15+
+**Requirements:** Xcode 16+, iOS 17+ simulator (for app targets)
 
-**Domain & networking tests (no simulator needed):**
+### Production app (`RickAndMorty`)
+
+Open `RickAndMorty.xcodeproj` in Xcode, select the **`RickAndMorty`** scheme, choose an iOS 17+ simulator, and press **Run (⌘R)**.
+
+```
+xcodebuild build \
+  -project RickAndMorty.xcodeproj \
+  -scheme RickAndMorty \
+  -destination 'platform=iOS Simulator,name=iPhone 16'
+```
+
+### Prototype app (`RickAndMortyPrototype`)
+
+Select the **`RickAndMortyPrototype`** scheme in Xcode, choose a simulator, and press **Run**. No network connection needed — all data is hardcoded.
+
+```
+xcodebuild build \
+  -project RickAndMorty.xcodeproj \
+  -scheme RickAndMortyPrototype \
+  -destination 'platform=iOS Simulator,name=iPhone 16'
+```
+
+### Unit tests — no simulator needed (`RickAndMortyTests`)
+
 ```
 xcodebuild test \
   -project RickAndMorty.xcodeproj \
@@ -16,8 +51,16 @@ xcodebuild test \
   -destination 'platform=macOS'
 ```
 
-**Run the app:**
-Open `RickAndMorty.xcodeproj` in Xcode, select the `RickAndMorty` scheme, choose an iOS 16+ simulator, and press **Run**.
+### End-to-end tests — hits real API (`RickAndMortyAPIEndToEndTests`)
+
+Requires a network connection. Run manually, not in the fast test suite.
+
+```
+xcodebuild test \
+  -project RickAndMorty.xcodeproj \
+  -scheme RickAndMortyAPIEndToEndTests \
+  -destination 'platform=iOS Simulator,name=iPhone 16'
+```
 
 ---
 
