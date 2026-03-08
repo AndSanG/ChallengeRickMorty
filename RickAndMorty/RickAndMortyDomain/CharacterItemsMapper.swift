@@ -43,6 +43,14 @@ enum CharacterItemsMapper {
         let name: String
     }
 
+    static func mapSingle(_ data: Data, from response: HTTPURLResponse) throws -> Character {
+        guard response.statusCode == 200,
+              let remote = try? JSONDecoder().decode(RemoteCharacterItem.self, from: data),
+              let character = remote.toDomain
+        else { throw RemoteCharacterDetailLoader.Error.invalidData }
+        return character
+    }
+
     static func map(_ data: Data, from response: HTTPURLResponse) throws -> CharactersPage {
         guard response.statusCode == 200,
               let remote = try? JSONDecoder().decode(RemoteCharactersResponse.self, from: data)
