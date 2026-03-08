@@ -76,6 +76,19 @@ import Foundation
 
         #expect(sut.errorMessage != nil)
     }
+
+    // MARK: - Test 8
+
+    @Test func load_clearsErrorBeforeReloading() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .failure(anyError()))
+
+        sut.load()
+
+        #expect(sut.errorMessage == nil)
+    }
 }
 
 // MARK: - Helpers
