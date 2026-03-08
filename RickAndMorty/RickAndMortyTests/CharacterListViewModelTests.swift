@@ -42,6 +42,17 @@ import Foundation
 
         #expect(sut.isLoading == false)
     }
+
+    // MARK: - Test 5
+
+    @Test func load_clearsIsLoadingOnFailedLoad() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .failure(anyError()))
+
+        #expect(sut.isLoading == false)
+    }
 }
 
 // MARK: - Helpers
@@ -50,6 +61,10 @@ private extension CharacterListViewModelTests {
 
     func anyPage(results: [Character] = [], nextPage: Int? = nil) -> CharactersPage {
         CharactersPage(results: results, info: PageInfo(count: results.count, pages: 1, nextPage: nextPage))
+    }
+
+    func anyError() -> NSError {
+        NSError(domain: "test", code: 0)
     }
 }
 

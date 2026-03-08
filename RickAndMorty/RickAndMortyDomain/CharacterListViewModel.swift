@@ -18,7 +18,7 @@ public final class CharacterListViewModel {
             case .success:
                 isLoading = false
             case .failure:
-                break
+                isLoading = false
             }
         }
     }
