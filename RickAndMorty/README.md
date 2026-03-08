@@ -112,6 +112,23 @@ let listVM = CharacterListViewModel(loader: listLoader)
 
 ---
 
+### SOLID Principles
+
+The architecture heavily relies on SOLID principles to ensure code maintainability, testability, and scalability. Here is how each principle is applied:
+
+- **Single Responsibility Principle (SRP):** Each class and struct does precisely one thing. 
+  - `RemoteCharacterLoader` handles fetching and decoding character lists.
+  - `CharacterItemsMapper` handles taking raw network data and parsing it to domain models.
+  - `CharacterListViewModel` manages state purely for presentation.
+- **Open-Closed Principle (OCP):** Components are open for extension but closed for modification. If we were to add a `LocalCharacterLoader` (CoreData cache layer), the existing view models and tests would not require changes because they depend on the abstract `CharacterLoader` protocol.
+- **Liskov Substitution Principle (LSP):** Our app seamlessly swaps implementations of protocols. During unit testing, `URLProtocolStub` substitutes real network calls smoothly, and `CharacterLoaderSpy` accurately replaces `RemoteCharacterLoader` without forcing the ViewModel to know the difference.
+- **Interface Segregation Principle (ISP):** We prevent "fat" protocols.
+  - Rather than one massive `RickAndMortyService` protocol that has every endpoint, we broke it apart into `CharacterLoader` (for arrays) and `CharacterDetailLoader` (for singles).
+  - The network layer only requires an `HTTPClient` protocol with a single `get` method. No component is forced to depend on methods it doesn't use.
+- **Dependency Inversion Principle (DIP):** High-level modules (`CharacterListViewModel`) do not depend on low-level modules (`RemoteCharacterLoader` or `URLSessionHTTPClient`). Instead, both depend on abstractions (`CharacterLoader` protocol). The instantiation of concrete types is pulled all the way back up to the Composition Root (`RickAndMortyApp`).
+
+---
+
 ## Dependency Injection
 
 Every collaborator is injected via the constructor. No type creates its own dependencies.
