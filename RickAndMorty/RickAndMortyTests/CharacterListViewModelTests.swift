@@ -31,6 +31,26 @@ import Foundation
 
         #expect(sut.isLoading == true)
     }
+
+    // MARK: - Test 4
+
+    @Test func load_clearsIsLoadingOnSuccessfulLoad() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .success(anyPage()))
+
+        #expect(sut.isLoading == false)
+    }
+}
+
+// MARK: - Helpers
+
+private extension CharacterListViewModelTests {
+
+    func anyPage(results: [Character] = [], nextPage: Int? = nil) -> CharactersPage {
+        CharactersPage(results: results, info: PageInfo(count: results.count, pages: 1, nextPage: nextPage))
+    }
 }
 
 // MARK: - Helpers

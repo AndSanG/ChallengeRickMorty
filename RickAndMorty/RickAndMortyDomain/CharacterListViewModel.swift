@@ -12,6 +12,14 @@ public final class CharacterListViewModel {
 
     public func load() {
         isLoading = true
-        loader.load(query: CharacterQuery(page: 1, name: nil, status: nil)) { _ in }
+        loader.load(query: CharacterQuery(page: 1, name: nil, status: nil)) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success:
+                isLoading = false
+            case .failure:
+                break
+            }
+        }
     }
 }
