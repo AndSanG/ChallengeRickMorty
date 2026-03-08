@@ -22,6 +22,16 @@ import Foundation
 
         #expect(loader.capturedIDs == [characterID])
     }
+
+    // MARK: - Test 3
+
+    @Test func load_setsIsLoadingDuringRequest() {
+        let (sut, _) = makeSUT()
+
+        sut.load()
+
+        #expect(sut.isLoading == true)
+    }
 }
 
 // MARK: - Helpers
