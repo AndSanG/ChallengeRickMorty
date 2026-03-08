@@ -13,6 +13,8 @@ struct CharacterDetailView: View {
                 errorView(message: message)
             } else if let character = viewModel.character {
                 characterDetail(character)
+            } else {
+                Color.clear
             }
         }
         .onAppear { viewModel.load() }

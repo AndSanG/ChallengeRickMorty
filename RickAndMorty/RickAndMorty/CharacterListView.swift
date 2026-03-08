@@ -9,6 +9,9 @@ struct CharacterListView: View {
         NavigationStack {
             content
                 .navigationTitle("Rick & Morty")
+                .navigationDestination(for: Int.self) { id in
+                    CharacterDetailView(viewModel: makeDetailViewModel(id))
+                }
                 .searchable(text: Bindable(viewModel).searchText, prompt: "Search characters")
                 .onChange(of: viewModel.searchText) { _, _ in viewModel.load() }
                 .toolbar { filterToolbar }
@@ -35,7 +38,7 @@ struct CharacterListView: View {
     private var characterList: some View {
         List {
             ForEach(viewModel.characters, id: \.id) { character in
-                NavigationLink(destination: CharacterDetailView(viewModel: makeDetailViewModel(character.id))) {
+                NavigationLink(value: character.id) {
                     CharacterRowView(character: character)
                 }
             }
