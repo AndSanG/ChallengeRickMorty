@@ -51,6 +51,7 @@ extension CharacterStatus {
         case .alive:   return .green
         case .dead:    return .red
         case .unknown: return .gray
+        @unknown default: return .gray
         }
     }
 
@@ -59,6 +60,7 @@ extension CharacterStatus {
         case .alive:   return "Alive"
         case .dead:    return "Dead"
         case .unknown: return "Unknown"
+        @unknown default: return "Unknown"
         }
     }
 }

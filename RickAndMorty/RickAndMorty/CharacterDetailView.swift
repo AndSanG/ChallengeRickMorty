@@ -96,6 +96,7 @@ private extension CharacterGender {
         case .female:     return "Female"
         case .genderless: return "Genderless"
         case .unknown:    return "Unknown"
+        @unknown default: return "Unknown"
         }
     }
 }
