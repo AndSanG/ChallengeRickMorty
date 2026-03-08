@@ -21,6 +21,16 @@ import Foundation
 
         #expect(loader.loadCallCount == 1)
     }
+
+    // MARK: - Test 3
+
+    @Test func load_setsIsLoadingDuringRequest() {
+        let (sut, _) = makeSUT()
+
+        sut.load()
+
+        #expect(sut.isLoading == true)
+    }
 }
 
 // MARK: - Helpers
