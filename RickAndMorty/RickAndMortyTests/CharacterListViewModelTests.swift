@@ -108,6 +108,36 @@ import Foundation
 
     // MARK: - Test 10
 
+    @Test func loadNextPage_setsNextPageErrorMessageOnFailure() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .success(anyPage(results: [makeCharacter(id: 1)], nextPage: 2)))
+
+        sut.loadNextPage()
+        loader.complete(with: .failure(anyError()), at: 1)
+
+        #expect(sut.nextPageErrorMessage != nil)
+    }
+
+    // MARK: - Test 11
+
+    @Test func loadNextPage_clearsNextPageErrorMessageOnRetry() {
+        let (sut, loader) = makeSUT()
+
+        sut.load()
+        loader.complete(with: .success(anyPage(results: [makeCharacter(id: 1)], nextPage: 2)))
+
+        sut.loadNextPage()
+        loader.complete(with: .failure(anyError()), at: 1)
+
+        sut.loadNextPage()
+
+        #expect(sut.nextPageErrorMessage == nil)
+    }
+
+    // MARK: - Test 12
+
     @Test func loadNextPage_doesNothingWhenOnLastPage() {
         let (sut, loader) = makeSUT()
 

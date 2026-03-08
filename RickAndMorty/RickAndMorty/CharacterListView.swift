@@ -39,7 +39,17 @@ struct CharacterListView: View {
                     CharacterRowView(character: character)
                 }
             }
-            if viewModel.hasNextPage {
+            if let message = viewModel.nextPageErrorMessage {
+                VStack(spacing: 8) {
+                    Text(message)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                    Button("Retry") { viewModel.loadNextPage() }
+                        .buttonStyle(.borderedProminent)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+            } else if viewModel.hasNextPage {
                 ProgressView()
                     .frame(maxWidth: .infinity)
                     .onAppear { viewModel.loadNextPage() }

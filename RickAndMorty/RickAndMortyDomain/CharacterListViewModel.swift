@@ -6,6 +6,7 @@ public final class CharacterListViewModel {
     public private(set) var characters: [Character] = []
     public private(set) var isLoading = false
     public private(set) var errorMessage: String? = nil
+    public private(set) var nextPageErrorMessage: String? = nil
     public private(set) var hasNextPage = false
     public var searchText: String = ""
     public var statusFilter: CharacterStatus? = nil
@@ -46,6 +47,7 @@ public final class CharacterListViewModel {
         guard hasNextPage, !isLoading else { return }
         let nextPage = currentPage + 1
         isLoading = true
+        nextPageErrorMessage = nil
         loader.load(query: makeQuery(page: nextPage)) { [weak self] result in
             guard let self else { return }
             isLoading = false
@@ -55,7 +57,7 @@ public final class CharacterListViewModel {
                 characters += page.results
                 hasNextPage = page.info.nextPage != nil
             case .failure:
-                errorMessage = "Failed to load more characters."
+                nextPageErrorMessage = "Failed to load more characters."
             }
         }
     }
