@@ -54,6 +54,19 @@ import Foundation
 
         #expect(sut.isLoading == false)
     }
+
+    // MARK: - Test 6
+
+    @Test func load_deliversCharacterOnSuccess() {
+        let (sut, loader) = makeSUT()
+        let character = anyCharacter()
+
+        sut.load()
+        loader.complete(with: .success(character))
+
+        #expect(sut.character?.id == character.id)
+        #expect(sut.character?.name == character.name)
+    }
 }
 
 // MARK: - Helpers

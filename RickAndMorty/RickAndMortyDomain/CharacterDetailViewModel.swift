@@ -3,6 +3,7 @@ import Observation
 
 @Observable
 public final class CharacterDetailViewModel {
+    public private(set) var character: Character? = nil
     public private(set) var isLoading = false
     @ObservationIgnored private let characterID: Int
     @ObservationIgnored private let loader: CharacterDetailLoader
@@ -17,6 +18,9 @@ public final class CharacterDetailViewModel {
         loader.loadDetail(id: characterID) { [weak self] result in
             guard let self else { return }
             isLoading = false
+            if case .success(let loaded) = result {
+                character = loaded
+            }
         }
     }
 }
