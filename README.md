@@ -218,8 +218,69 @@ Both ViewModels use `@Observable` (from `import Observation`, not SwiftUI) and d
 
 ---
 
+## Assignment Checklist
+
+### Deliverables
+- [x] Xcode iOS project
+- [x] Full source code
+- [x] Unit tests (30+ across 4 test suites)
+- [x] README.md — setup, decisions, trade-offs
+- [x] Git repository (see commit history for progressive TDD delivery)
+
+### Functional — Character List
+- [x] Fetch and display characters from `GET /character`
+- [x] Each row: image (`AsyncImage`), name, status with colour indicator, species — see `CharacterRowView`
+- [x] Loading state — `ProgressView` while `isLoading && characters.isEmpty`
+- [x] Error state with retry — `ContentUnavailableView` + Retry button calling `viewModel.load()`
+- [x] Empty state (no results) — `ContentUnavailableView` when list is empty after load
+- [x] Pagination — infinite scroll: a `ProgressView` at the bottom of the list triggers `loadNextPage()` via `.onAppear`
+
+### Functional — Search & Filter
+- [x] Search by name — `searchable` modifier bound to `viewModel.searchText`; API handles case-insensitivity server-side
+- [x] Filter by status (All / Alive / Dead / Unknown) — toolbar `Menu` bound to `viewModel.statusFilter`
+- [x] Search or filter change resets to page 1 — `load()` always sets `currentPage = 1`
+- [ ] Search debounce (250–400 ms) — **not implemented**; listed under *What I Would Improve or Add Next*
+
+### Functional — Character Detail
+- [x] Tap navigates to detail screen
+- [x] Fetches `GET /character/{id}` (preferred boundary design) — via `RemoteCharacterDetailLoader`
+- [x] Image & name
+- [x] Status, species, and gender
+- [x] Origin name and location name
+- [x] Episode count
+
+### Non-Functional — Architecture & Code Quality
+- [x] SwiftUI
+- [x] MVVM + Clean Architecture — see *Architecture* section
+- [x] SOLID applied — single-responsibility loaders, protocol-driven dependencies, interface segregation via `CharacterLoader` / `CharacterDetailLoader` / `HTTPClient`
+- [x] Constructor injection throughout — see *Dependency Injection* section
+- [x] No global singletons — `URLSession.shared` is not used; a configured `URLSession` is injected at the composition root
+- [x] Clear boundaries between UI, Domain, and Data — enforced by target membership (`RickAndMortyDomain` has no SwiftUI import; `RickAndMorty` app target never imports infrastructure types directly)
+
+### Non-Functional — Testing
+- [x] ≥ 2 unit tests — 30+ provided
+- [x] ViewModel behaviour: state transitions and pagination resets covered — `CharacterListViewModelTests` (10 tests), `CharacterDetailViewModelTests` (7 tests)
+- [x] Service/API layer: success decoding, connectivity error, non-200 responses, invalid JSON — `RemoteCharacterLoaderTests` (9 tests), `URLSessionHTTPClientTests` (4 tests)
+- [x] Tests are deterministic and never hit the real network — Spy pattern for ViewModels; `URLProtocolStub` for HTTP client; real-network tests isolated to `RickAndMortyAPIEndToEndTests` (run manually)
+
+### Constraints
+- [x] iOS 17+ deployment target
+- [x] No third-party libraries
+- [x] Scope kept tight — core requirements first
+
+### README Structure
+- [x] How to run the project
+- [x] Architecture and reasoning
+- [x] Dependency Injection explanation
+- [x] What was tested and why
+- [x] Observability and security choices — covered inline: ephemeral `URLSession` for E2E tests avoids caching; no credentials or tokens in source; `URLProtocolStub` prevents accidental network calls in unit tests
+- [x] What I would improve or add next
+
+---
+
 ## What I Would Improve or Add Next
 
+- Organize Domain code in folders.
 - Search debounce (300 ms `Task.sleep` + cancellation on new keystroke) in `CharacterListViewModel`
 - Local cache layer (`CharacterStore` protocol + `CoreData` implementation) for offline support
 - Image caching (`NSCache`-backed) to avoid re-fetching on scroll
